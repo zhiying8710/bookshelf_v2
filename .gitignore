@@ -1,0 +1,14 @@
+test
+*.pyc
+build
+dbs
+eggs
+items
+logs
+project.egg-info
+setup.py
+*.log
+.project
+nohup.out
+.pydevproject
+.settings
