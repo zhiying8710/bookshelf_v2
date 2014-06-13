@@ -34,8 +34,8 @@ def download(dest_dir, info):
         crl.fp.close()
     rcode = str(crl.getinfo(pycurl.RESPONSE_CODE))  # @UndefinedVariable
     if re.match("^(4|5)[0-9]{2}$", rcode):
-#         if os.path.exists(filename):
-#             os.remove(filename)
+        if os.path.exists(filename):
+            os.remove(filename)
         msg = u"HTTP error code for url %s is %s"% (url, rcode)
         raise Exception(msg)
     else:

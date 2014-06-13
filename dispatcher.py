@@ -3,6 +3,9 @@
 # @author: binge
 
 import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')  # @UndefinedVariable
+
 from util import settings, conns_helper, log, common
 from downloader import download
 import threading
@@ -11,8 +14,6 @@ import traceback
 import os
 import repository
 import spiders
-reload(sys)
-sys.setdefaultencoding('utf-8')  # @UndefinedVariable
 
 def monitor_spider_info_queue():
     rconn = conns_helper.get_redis_conn()
@@ -87,4 +88,4 @@ def start(ths=50):
 if __name__ == '__main__':
     if not os.path.exists(settings.download_file_dir):
         os.makedirs(settings.download_file_dir)
-    start(1)
+    start()
